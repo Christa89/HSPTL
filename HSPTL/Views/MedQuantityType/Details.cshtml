@@ -1,0 +1,38 @@
+﻿@model ModelData.Med_quantity_type
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Med_quan_type)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Med_quan_type)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Med_quantity)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Med_quantity)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Med_quan_typeId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

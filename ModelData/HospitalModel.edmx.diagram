@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6efc825575a5499884897b12db1ecd6c" Name="Diagram1">
+        <EntityTypeShape EntityType="HSPTALModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.AspNetRole" Width="1.5" PointX="9" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.AspNetUserClaim" Width="1.5" PointX="13.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.AspNetUserLogin" Width="1.5" PointX="13.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Emp_Designtion" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Emp_Doc_Specialist" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Emp_Employee" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Emp_Patient" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_Details" Width="1.5" PointX="10.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_ManualDay" Width="1.5" PointX="10.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_ManualTime" Width="1.5" PointX="10.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_Pres_Type" Width="1.5" PointX="12.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_Pres_type_Pres" Width="1.5" PointX="14.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_Prescription" Width="1.5" PointX="12.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_quantity_type" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Med_Type" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Shed_Appoinment" Width="1.5" PointX="8.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Shed_Available_Staff" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.Shed_reshedule_Staff" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.User_Account" Width="1.5" PointX="11.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.User_Group" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.User_Group_Role" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSPTALModel.User_Role" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="HSPTALModel.FK_dbo_AspNetUserClaims_dbo_User_Account_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_dbo_AspNetUserLogins_dbo_User_Account_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Emp_Employee_Emp_Designtion" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Emp_Employee_Emp_Doc_Specialist" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Emp_Employee_User_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Emp_Patient_Emp_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Shed_Appoinment_Emp_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Shed_Available_Staff_Emp_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Shed_reshedule_Staff_Emp_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_User_Account_Emp_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Shed_Appoinment_Emp_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Details_Med_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Prescription_Med_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Prescription_Med_ManualDay" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Prescription_Med_ManualTime" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Pres_type_Pres_Med_Pres_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Pres_type_Pres_Med_Prescription" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_Med_Type_Med_quantity_type" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_User_Account_User_Group_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_User_Group_Role_User_Group1" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.FK_User_Group_Role_User_Role1" ManuallyRouted="false" />
+        <AssociationConnector Association="HSPTALModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

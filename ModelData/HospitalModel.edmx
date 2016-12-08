@@ -1,0 +1,1612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HSPTALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emp_Designtion">
+          <Key>
+            <PropertyRef Name="EmpDesignationId" />
+          </Key>
+          <Property Name="EmpDesignationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpDesignation" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Emp_Doc_Specialist">
+          <Key>
+            <PropertyRef Name="Doc_specialist_id" />
+          </Key>
+          <Property Name="Doc_specialist_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doc_specialist" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Emp_Employee">
+          <Key>
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_name" Type="varchar" MaxLength="100" />
+          <Property Name="Emp_callingName" Type="varchar" MaxLength="75" />
+          <Property Name="Emp_tiltie" Type="varchar" MaxLength="20" />
+          <Property Name="Emp_desig_id" Type="int" />
+          <Property Name="Emp_isActive" Type="smallint" />
+          <Property Name="UserGrpId" Type="int" />
+          <Property Name="Doc_specialist_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Emp_Patient">
+          <Key>
+            <PropertyRef Name="Patient_Id" />
+          </Key>
+          <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Patient_address" Type="varchar" MaxLength="100" />
+          <Property Name="Patient_Pno" Type="decimal" Precision="12" Scale="0" />
+          <Property Name="App_Emp_Id" Type="int" />
+          <Property Name="Disease_type" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Med_Details">
+          <Key>
+            <PropertyRef Name="Med_id" />
+          </Key>
+          <Property Name="Med_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Med_typeId" Type="int" />
+          <Property Name="Med_Available_quantity" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Med_ManualDay">
+          <Key>
+            <PropertyRef Name="Med_Manual_day_Id" />
+          </Key>
+          <Property Name="Med_Manual_day_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_Manual_day" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Med_ManualTime">
+          <Key>
+            <PropertyRef Name="Med_manualTime_id" />
+          </Key>
+          <Property Name="Med_manualTime_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_manualTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Med_Pres_Type">
+          <Key>
+            <PropertyRef Name="Pres_Type_ID" />
+          </Key>
+          <Property Name="Pres_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pres_Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Med_Pres_type_Pres">
+          <Key>
+            <PropertyRef Name="Pres_type_pres_Id" />
+          </Key>
+          <Property Name="Pres_type_pres_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pre_id" Type="int" Nullable="false" />
+          <Property Name="Pres_Type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Med_Prescription">
+          <Key>
+            <PropertyRef Name="Prescrip_id" />
+          </Key>
+          <Property Name="Prescrip_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_id" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Med_manualTimeId" Type="int" />
+          <Property Name="Med_manualDayId" Type="int" />
+          <Property Name="Consulltdate" Type="date" />
+          <Property Name="Isdeliver" Type="smallint" />
+          <Property Name="DeliverDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Med_quantity_type">
+          <Key>
+            <PropertyRef Name="Med_quan_typeId" />
+          </Key>
+          <Property Name="Med_quan_typeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Med_quan_type" Type="varchar" MaxLength="50" />
+          <Property Name="Med_quantity" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Med_Type">
+          <Key>
+            <PropertyRef Name="MedTypeId" />
+          </Key>
+          <Property Name="MedTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MedType" Type="varchar" MaxLength="50" />
+          <Property Name="Med_quan_typeId" Type="int" />
+        </EntityType>
+        <EntityType Name="Shed_Appoinment">
+          <Key>
+            <PropertyRef Name="AppointmntId" />
+          </Key>
+          <Property Name="AppointmntId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Appoinmt_Date" Type="date" />
+          <Property Name="Appoinmt_Time" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="App_Emp_Id" Type="int" />
+          <Property Name="App_patient_Id" Type="int" />
+          <Property Name="Isactive" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Shed_Available_Staff">
+          <Key>
+            <PropertyRef Name="Emp_sheduleId" />
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_sheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_id" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="FromTime" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="ToTime" Type="decimal" Precision="2" Scale="0" />
+        </EntityType>
+        <EntityType Name="Shed_reshedule_Staff">
+          <Key>
+            <PropertyRef Name="Reshed_empId" />
+          </Key>
+          <Property Name="Reshed_empId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_id" Type="int" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="FromTime" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="ToTime" Type="decimal" Precision="2" Scale="0" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Name="UserTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User_Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="smallint" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UserGrpRoleTypeId" Type="int" />
+          <Property Name="SecurityStamp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discriminator" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsConfirmed" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="EmailConfirmed" Type="bit" />
+          <Property Name="LockoutEnabled" Type="bit" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" />
+          <Property Name="TwoFactorEnabled" Type="bit" />
+        </EntityType>
+        <EntityType Name="User_Group">
+          <Key>
+            <PropertyRef Name="UserGrpId" />
+          </Key>
+          <Property Name="UserGrpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserGroup" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="User_Group_Role">
+          <Key>
+            <PropertyRef Name="UserGrpRoleId" />
+          </Key>
+          <Property Name="UserGrpRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserGrpId" Type="int" />
+          <Property Name="UserRoelId" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Role">
+          <Key>
+            <PropertyRef Name="UserRoelId" />
+          </Key>
+          <Property Name="UserRoelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserRole" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_User_Account_Id">
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_User_Account_Id">
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_User_Account_Id">
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_Emp_Designtion">
+          <End Role="Emp_Designtion" Type="Self.Emp_Designtion" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Designtion">
+              <PropertyRef Name="EmpDesignationId" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="Emp_desig_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_Emp_Doc_Specialist">
+          <End Role="Emp_Doc_Specialist" Type="Self.Emp_Doc_Specialist" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Doc_Specialist">
+              <PropertyRef Name="Doc_specialist_id" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="Doc_specialist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_User_Group">
+          <End Role="User_Group" Type="Self.User_Group" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group">
+              <PropertyRef Name="UserGrpId" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="UserGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Patient_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="0..1" />
+          <End Role="Emp_Patient" Type="Self.Emp_Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Emp_Patient">
+              <PropertyRef Name="App_Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Details_Med_Type">
+          <End Role="Med_Type" Type="Self.Med_Type" Multiplicity="0..1" />
+          <End Role="Med_Details" Type="Self.Med_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Type">
+              <PropertyRef Name="MedTypeId" />
+            </Principal>
+            <Dependent Role="Med_Details">
+              <PropertyRef Name="Med_typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Pres_type_Pres_Med_Pres_Type">
+          <End Role="Med_Pres_Type" Type="Self.Med_Pres_Type" Multiplicity="1" />
+          <End Role="Med_Pres_type_Pres" Type="Self.Med_Pres_type_Pres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Pres_Type">
+              <PropertyRef Name="Pres_Type_ID" />
+            </Principal>
+            <Dependent Role="Med_Pres_type_Pres">
+              <PropertyRef Name="Pres_Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Pres_type_Pres_Med_Prescription">
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="1" />
+          <End Role="Med_Pres_type_Pres" Type="Self.Med_Pres_type_Pres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Prescription">
+              <PropertyRef Name="Prescrip_id" />
+            </Principal>
+            <Dependent Role="Med_Pres_type_Pres">
+              <PropertyRef Name="Pre_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_Details">
+          <End Role="Med_Details" Type="Self.Med_Details" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Details">
+              <PropertyRef Name="Med_id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_ManualDay">
+          <End Role="Med_ManualDay" Type="Self.Med_ManualDay" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_ManualDay">
+              <PropertyRef Name="Med_Manual_day_Id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_manualDayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_ManualTime">
+          <End Role="Med_ManualTime" Type="Self.Med_ManualTime" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_ManualTime">
+              <PropertyRef Name="Med_manualTime_id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_manualTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Type_Med_quantity_type">
+          <End Role="Med_quantity_type" Type="Self.Med_quantity_type" Multiplicity="0..1" />
+          <End Role="Med_Type" Type="Self.Med_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_quantity_type">
+              <PropertyRef Name="Med_quan_typeId" />
+            </Principal>
+            <Dependent Role="Med_Type">
+              <PropertyRef Name="Med_quan_typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Appoinment_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="0..1" />
+          <End Role="Shed_Appoinment" Type="Self.Shed_Appoinment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_Appoinment">
+              <PropertyRef Name="App_Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Appoinment_Emp_Patient">
+          <End Role="Emp_Patient" Type="Self.Emp_Patient" Multiplicity="0..1" />
+          <End Role="Shed_Appoinment" Type="Self.Shed_Appoinment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Patient">
+              <PropertyRef Name="Patient_Id" />
+            </Principal>
+            <Dependent Role="Shed_Appoinment">
+              <PropertyRef Name="App_patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Available_Staff_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="Shed_Available_Staff" Type="Self.Shed_Available_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_Available_Staff">
+              <PropertyRef Name="Emp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_reshedule_Staff_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="Shed_reshedule_Staff" Type="Self.Shed_reshedule_Staff" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_reshedule_Staff">
+              <PropertyRef Name="Reshed_empId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Account_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="User_Account">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Account_User_Group_Role">
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="0..1" />
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group_Role">
+              <PropertyRef Name="UserGrpRoleId" />
+            </Principal>
+            <Dependent Role="User_Account">
+              <PropertyRef Name="UserGrpRoleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Group_Role_User_Group1">
+          <End Role="User_Group" Type="Self.User_Group" Multiplicity="0..1" />
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group">
+              <PropertyRef Name="UserGrpId" />
+            </Principal>
+            <Dependent Role="User_Group_Role">
+              <PropertyRef Name="UserGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Group_Role_User_Role1">
+          <End Role="User_Role" Type="Self.User_Role" Multiplicity="0..1" />
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Role">
+              <PropertyRef Name="UserRoelId" />
+            </Principal>
+            <Dependent Role="User_Group_Role">
+              <PropertyRef Name="UserRoelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HSPTALModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Designtion" EntityType="Self.Emp_Designtion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Doc_Specialist" EntityType="Self.Emp_Doc_Specialist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Employee" EntityType="Self.Emp_Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emp_Patient" EntityType="Self.Emp_Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Details" EntityType="Self.Med_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_ManualDay" EntityType="Self.Med_ManualDay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_ManualTime" EntityType="Self.Med_ManualTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Pres_Type" EntityType="Self.Med_Pres_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Pres_type_Pres" EntityType="Self.Med_Pres_type_Pres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Prescription" EntityType="Self.Med_Prescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_quantity_type" EntityType="Self.Med_quantity_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Med_Type" EntityType="Self.Med_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shed_Appoinment" EntityType="Self.Shed_Appoinment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shed_Available_Staff" EntityType="Self.Shed_Available_Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shed_reshedule_Staff" EntityType="Self.Shed_reshedule_Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Account" EntityType="Self.User_Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Group" EntityType="Self.User_Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Group_Role" EntityType="Self.User_Group_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Role" EntityType="Self.User_Role" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_User_Account_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_User_Account_Id">
+            <End Role="User_Account" EntitySet="User_Account" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_User_Account_Id" Association="Self.FK_dbo_AspNetUserLogins_dbo_User_Account_Id">
+            <End Role="User_Account" EntitySet="User_Account" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_User_Account_Id" Association="Self.FK_dbo_AspNetUserRoles_dbo_User_Account_Id">
+            <End Role="User_Account" EntitySet="User_Account" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_Emp_Designtion" Association="Self.FK_Emp_Employee_Emp_Designtion">
+            <End Role="Emp_Designtion" EntitySet="Emp_Designtion" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_Emp_Doc_Specialist" Association="Self.FK_Emp_Employee_Emp_Doc_Specialist">
+            <End Role="Emp_Doc_Specialist" EntitySet="Emp_Doc_Specialist" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_User_Group" Association="Self.FK_Emp_Employee_User_Group">
+            <End Role="User_Group" EntitySet="User_Group" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Patient_Emp_Employee" Association="Self.FK_Emp_Patient_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Emp_Patient" EntitySet="Emp_Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Details_Med_Type" Association="Self.FK_Med_Details_Med_Type">
+            <End Role="Med_Type" EntitySet="Med_Type" />
+            <End Role="Med_Details" EntitySet="Med_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Pres_type_Pres_Med_Pres_Type" Association="Self.FK_Med_Pres_type_Pres_Med_Pres_Type">
+            <End Role="Med_Pres_Type" EntitySet="Med_Pres_Type" />
+            <End Role="Med_Pres_type_Pres" EntitySet="Med_Pres_type_Pres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Pres_type_Pres_Med_Prescription" Association="Self.FK_Med_Pres_type_Pres_Med_Prescription">
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+            <End Role="Med_Pres_type_Pres" EntitySet="Med_Pres_type_Pres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_Details" Association="Self.FK_Med_Prescription_Med_Details">
+            <End Role="Med_Details" EntitySet="Med_Details" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_ManualDay" Association="Self.FK_Med_Prescription_Med_ManualDay">
+            <End Role="Med_ManualDay" EntitySet="Med_ManualDay" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_ManualTime" Association="Self.FK_Med_Prescription_Med_ManualTime">
+            <End Role="Med_ManualTime" EntitySet="Med_ManualTime" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Type_Med_quantity_type" Association="Self.FK_Med_Type_Med_quantity_type">
+            <End Role="Med_quantity_type" EntitySet="Med_quantity_type" />
+            <End Role="Med_Type" EntitySet="Med_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Appoinment_Emp_Employee" Association="Self.FK_Shed_Appoinment_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_Appoinment" EntitySet="Shed_Appoinment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Appoinment_Emp_Patient" Association="Self.FK_Shed_Appoinment_Emp_Patient">
+            <End Role="Emp_Patient" EntitySet="Emp_Patient" />
+            <End Role="Shed_Appoinment" EntitySet="Shed_Appoinment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Available_Staff_Emp_Employee" Association="Self.FK_Shed_Available_Staff_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_Available_Staff" EntitySet="Shed_Available_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_reshedule_Staff_Emp_Employee" Association="Self.FK_Shed_reshedule_Staff_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_reshedule_Staff" EntitySet="Shed_reshedule_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Account_Emp_Employee" Association="Self.FK_User_Account_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="User_Account" EntitySet="User_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Account_User_Group_Role" Association="Self.FK_User_Account_User_Group_Role">
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+            <End Role="User_Account" EntitySet="User_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Group_Role_User_Group1" Association="Self.FK_User_Group_Role_User_Group1">
+            <End Role="User_Group" EntitySet="User_Group" />
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Group_Role_User_Role1" Association="Self.FK_User_Group_Role_User_Role1">
+            <End Role="User_Role" EntitySet="User_Role" />
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HSPTALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User_Account" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="User_Account" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User_Account" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_User_Account_Id" FromRole="AspNetUserClaims" ToRole="User_Account" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User_Account" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_User_Account_Id" FromRole="AspNetUserLogins" ToRole="User_Account" />
+        </EntityType>
+        <EntityType Name="Emp_Designtion">
+          <Key>
+            <PropertyRef Name="EmpDesignationId" />
+          </Key>
+          <Property Name="EmpDesignationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Emp_Employee_Emp_Designtion" FromRole="Emp_Designtion" ToRole="Emp_Employee" />
+        </EntityType>
+        <EntityType Name="Emp_Doc_Specialist">
+          <Key>
+            <PropertyRef Name="Doc_specialist_id" />
+          </Key>
+          <Property Name="Doc_specialist_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doc_specialist" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Emp_Employee_Emp_Doc_Specialist" FromRole="Emp_Doc_Specialist" ToRole="Emp_Employee" />
+        </EntityType>
+        <EntityType Name="Emp_Employee">
+          <Key>
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_callingName" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_tiltie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_desig_id" Type="Int32" />
+          <Property Name="Emp_isActive" Type="Int16" />
+          <Property Name="UserGrpId" Type="Int32" />
+          <Property Name="Doc_specialist_id" Type="Int32" />
+          <NavigationProperty Name="Emp_Designtion" Relationship="Self.FK_Emp_Employee_Emp_Designtion" FromRole="Emp_Employee" ToRole="Emp_Designtion" />
+          <NavigationProperty Name="Emp_Doc_Specialist" Relationship="Self.FK_Emp_Employee_Emp_Doc_Specialist" FromRole="Emp_Employee" ToRole="Emp_Doc_Specialist" />
+          <NavigationProperty Name="User_Group" Relationship="Self.FK_Emp_Employee_User_Group" FromRole="Emp_Employee" ToRole="User_Group" />
+          <NavigationProperty Name="Emp_Patient" Relationship="Self.FK_Emp_Patient_Emp_Employee" FromRole="Emp_Employee" ToRole="Emp_Patient" />
+          <NavigationProperty Name="Shed_Appoinment" Relationship="Self.FK_Shed_Appoinment_Emp_Employee" FromRole="Emp_Employee" ToRole="Shed_Appoinment" />
+          <NavigationProperty Name="Shed_Available_Staff" Relationship="Self.FK_Shed_Available_Staff_Emp_Employee" FromRole="Emp_Employee" ToRole="Shed_Available_Staff" />
+          <NavigationProperty Name="Shed_reshedule_Staff" Relationship="Self.FK_Shed_reshedule_Staff_Emp_Employee" FromRole="Emp_Employee" ToRole="Shed_reshedule_Staff" />
+          <NavigationProperty Name="User_Account" Relationship="Self.FK_User_Account_Emp_Employee" FromRole="Emp_Employee" ToRole="User_Account" />
+        </EntityType>
+        <EntityType Name="Emp_Patient">
+          <Key>
+            <PropertyRef Name="Patient_Id" />
+          </Key>
+          <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Patient_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Patient_Pno" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="App_Emp_Id" Type="Int32" />
+          <Property Name="Disease_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Emp_Patient_Emp_Employee" FromRole="Emp_Patient" ToRole="Emp_Employee" />
+          <NavigationProperty Name="Shed_Appoinment" Relationship="Self.FK_Shed_Appoinment_Emp_Patient" FromRole="Emp_Patient" ToRole="Shed_Appoinment" />
+        </EntityType>
+        <EntityType Name="Med_Details">
+          <Key>
+            <PropertyRef Name="Med_id" />
+          </Key>
+          <Property Name="Med_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Med_typeId" Type="Int32" />
+          <Property Name="Med_Available_quantity" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Med_Type" Relationship="Self.FK_Med_Details_Med_Type" FromRole="Med_Details" ToRole="Med_Type" />
+          <NavigationProperty Name="Med_Prescription" Relationship="Self.FK_Med_Prescription_Med_Details" FromRole="Med_Details" ToRole="Med_Prescription" />
+        </EntityType>
+        <EntityType Name="Med_ManualDay">
+          <Key>
+            <PropertyRef Name="Med_Manual_day_Id" />
+          </Key>
+          <Property Name="Med_Manual_day_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_Manual_day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Med_Prescription" Relationship="Self.FK_Med_Prescription_Med_ManualDay" FromRole="Med_ManualDay" ToRole="Med_Prescription" />
+        </EntityType>
+        <EntityType Name="Med_ManualTime">
+          <Key>
+            <PropertyRef Name="Med_manualTime_id" />
+          </Key>
+          <Property Name="Med_manualTime_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_manualTime1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Med_Prescription" Relationship="Self.FK_Med_Prescription_Med_ManualTime" FromRole="Med_ManualTime" ToRole="Med_Prescription" />
+        </EntityType>
+        <EntityType Name="Med_Pres_Type">
+          <Key>
+            <PropertyRef Name="Pres_Type_ID" />
+          </Key>
+          <Property Name="Pres_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pres_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Med_Pres_type_Pres" Relationship="Self.FK_Med_Pres_type_Pres_Med_Pres_Type" FromRole="Med_Pres_Type" ToRole="Med_Pres_type_Pres" />
+        </EntityType>
+        <EntityType Name="Med_Pres_type_Pres">
+          <Key>
+            <PropertyRef Name="Pres_type_pres_Id" />
+          </Key>
+          <Property Name="Pres_type_pres_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pre_id" Type="Int32" Nullable="false" />
+          <Property Name="Pres_Type_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Med_Pres_Type" Relationship="Self.FK_Med_Pres_type_Pres_Med_Pres_Type" FromRole="Med_Pres_type_Pres" ToRole="Med_Pres_Type" />
+          <NavigationProperty Name="Med_Prescription" Relationship="Self.FK_Med_Pres_type_Pres_Med_Prescription" FromRole="Med_Pres_type_Pres" ToRole="Med_Prescription" />
+        </EntityType>
+        <EntityType Name="Med_Prescription">
+          <Key>
+            <PropertyRef Name="Prescrip_id" />
+          </Key>
+          <Property Name="Prescrip_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_id" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Med_manualTimeId" Type="Int32" />
+          <Property Name="Med_manualDayId" Type="Int32" />
+          <Property Name="Consulltdate" Type="DateTime" Precision="0" />
+          <Property Name="Isdeliver" Type="Int16" />
+          <Property Name="DeliverDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Med_Details" Relationship="Self.FK_Med_Prescription_Med_Details" FromRole="Med_Prescription" ToRole="Med_Details" />
+          <NavigationProperty Name="Med_ManualDay" Relationship="Self.FK_Med_Prescription_Med_ManualDay" FromRole="Med_Prescription" ToRole="Med_ManualDay" />
+          <NavigationProperty Name="Med_ManualTime" Relationship="Self.FK_Med_Prescription_Med_ManualTime" FromRole="Med_Prescription" ToRole="Med_ManualTime" />
+          <NavigationProperty Name="Med_Pres_type_Pres" Relationship="Self.FK_Med_Pres_type_Pres_Med_Prescription" FromRole="Med_Prescription" ToRole="Med_Pres_type_Pres" />
+        </EntityType>
+        <EntityType Name="Med_quantity_type">
+          <Key>
+            <PropertyRef Name="Med_quan_typeId" />
+          </Key>
+          <Property Name="Med_quan_typeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Med_quan_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Med_quantity" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Med_Type" Relationship="Self.FK_Med_Type_Med_quantity_type" FromRole="Med_quantity_type" ToRole="Med_Type" />
+        </EntityType>
+        <EntityType Name="Med_Type">
+          <Key>
+            <PropertyRef Name="MedTypeId" />
+          </Key>
+          <Property Name="MedTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MedType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Med_quan_typeId" Type="Int32" />
+          <NavigationProperty Name="Med_Details" Relationship="Self.FK_Med_Details_Med_Type" FromRole="Med_Type" ToRole="Med_Details" />
+          <NavigationProperty Name="Med_quantity_type" Relationship="Self.FK_Med_Type_Med_quantity_type" FromRole="Med_Type" ToRole="Med_quantity_type" />
+        </EntityType>
+        <EntityType Name="Shed_Appoinment">
+          <Key>
+            <PropertyRef Name="AppointmntId" />
+          </Key>
+          <Property Name="AppointmntId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Appoinmt_Date" Type="DateTime" Precision="0" />
+          <Property Name="Appoinmt_Time" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="App_Emp_Id" Type="Int32" />
+          <Property Name="App_patient_Id" Type="Int32" />
+          <Property Name="Isactive" Type="Int16" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Shed_Appoinment_Emp_Employee" FromRole="Shed_Appoinment" ToRole="Emp_Employee" />
+          <NavigationProperty Name="Emp_Patient" Relationship="Self.FK_Shed_Appoinment_Emp_Patient" FromRole="Shed_Appoinment" ToRole="Emp_Patient" />
+        </EntityType>
+        <EntityType Name="Shed_Available_Staff">
+          <Key>
+            <PropertyRef Name="Emp_sheduleId" />
+            <PropertyRef Name="Emp_id" />
+          </Key>
+          <Property Name="Emp_sheduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_id" Type="Int32" Nullable="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="FromTime" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="ToTime" Type="Decimal" Precision="2" Scale="0" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Shed_Available_Staff_Emp_Employee" FromRole="Shed_Available_Staff" ToRole="Emp_Employee" />
+        </EntityType>
+        <EntityType Name="Shed_reshedule_Staff">
+          <Key>
+            <PropertyRef Name="Reshed_empId" />
+          </Key>
+          <Property Name="Reshed_empId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_id" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="FromTime" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="ToTime" Type="Decimal" Precision="2" Scale="0" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Shed_reshedule_Staff_Emp_Employee" FromRole="Shed_reshedule_Staff" ToRole="Emp_Employee" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserTypeId" />
+          </Key>
+          <Property Name="UserTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User_Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Int16" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UserGrpRoleTypeId" Type="Int32" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discriminator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailConfirmed" Type="Boolean" />
+          <Property Name="LockoutEnabled" Type="Boolean" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_User_Account_Id" FromRole="User_Account" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_User_Account_Id" FromRole="User_Account" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_User_Account_Emp_Employee" FromRole="User_Account" ToRole="Emp_Employee" />
+          <NavigationProperty Name="User_Group_Role" Relationship="Self.FK_User_Account_User_Group_Role" FromRole="User_Account" ToRole="User_Group_Role" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="User_Account" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="User_Group">
+          <Key>
+            <PropertyRef Name="UserGrpId" />
+          </Key>
+          <Property Name="UserGrpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserGroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Emp_Employee" Relationship="Self.FK_Emp_Employee_User_Group" FromRole="User_Group" ToRole="Emp_Employee" />
+          <NavigationProperty Name="User_Group_Role" Relationship="Self.FK_User_Group_Role_User_Group1" FromRole="User_Group" ToRole="User_Group_Role" />
+        </EntityType>
+        <EntityType Name="User_Group_Role">
+          <Key>
+            <PropertyRef Name="UserGrpRoleId" />
+          </Key>
+          <Property Name="UserGrpRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserGrpId" Type="Int32" />
+          <Property Name="UserRoelId" Type="Int32" />
+          <NavigationProperty Name="User_Account" Relationship="Self.FK_User_Account_User_Group_Role" FromRole="User_Group_Role" ToRole="User_Account" />
+          <NavigationProperty Name="User_Group" Relationship="Self.FK_User_Group_Role_User_Group1" FromRole="User_Group_Role" ToRole="User_Group" />
+          <NavigationProperty Name="User_Role" Relationship="Self.FK_User_Group_Role_User_Role1" FromRole="User_Group_Role" ToRole="User_Role" />
+        </EntityType>
+        <EntityType Name="User_Role">
+          <Key>
+            <PropertyRef Name="UserRoelId" />
+          </Key>
+          <Property Name="UserRoelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User_Group_Role" Relationship="Self.FK_User_Group_Role_User_Role1" FromRole="User_Role" ToRole="User_Group_Role" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_User_Account_Id">
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_User_Account_Id">
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_Emp_Designtion">
+          <End Role="Emp_Designtion" Type="Self.Emp_Designtion" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Designtion">
+              <PropertyRef Name="EmpDesignationId" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="Emp_desig_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_Emp_Doc_Specialist">
+          <End Role="Emp_Doc_Specialist" Type="Self.Emp_Doc_Specialist" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Doc_Specialist">
+              <PropertyRef Name="Doc_specialist_id" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="Doc_specialist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Employee_User_Group">
+          <End Role="User_Group" Type="Self.User_Group" Multiplicity="0..1" />
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group">
+              <PropertyRef Name="UserGrpId" />
+            </Principal>
+            <Dependent Role="Emp_Employee">
+              <PropertyRef Name="UserGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Patient_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="0..1" />
+          <End Role="Emp_Patient" Type="Self.Emp_Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Emp_Patient">
+              <PropertyRef Name="App_Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Appoinment_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="0..1" />
+          <End Role="Shed_Appoinment" Type="Self.Shed_Appoinment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_Appoinment">
+              <PropertyRef Name="App_Emp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Available_Staff_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="Shed_Available_Staff" Type="Self.Shed_Available_Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_Available_Staff">
+              <PropertyRef Name="Emp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_reshedule_Staff_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="Shed_reshedule_Staff" Type="Self.Shed_reshedule_Staff" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="Shed_reshedule_Staff">
+              <PropertyRef Name="Reshed_empId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Account_Emp_Employee">
+          <End Role="Emp_Employee" Type="Self.Emp_Employee" Multiplicity="1" />
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Employee">
+              <PropertyRef Name="Emp_id" />
+            </Principal>
+            <Dependent Role="User_Account">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shed_Appoinment_Emp_Patient">
+          <End Role="Emp_Patient" Type="Self.Emp_Patient" Multiplicity="0..1" />
+          <End Role="Shed_Appoinment" Type="Self.Shed_Appoinment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emp_Patient">
+              <PropertyRef Name="Patient_Id" />
+            </Principal>
+            <Dependent Role="Shed_Appoinment">
+              <PropertyRef Name="App_patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Details_Med_Type">
+          <End Role="Med_Type" Type="Self.Med_Type" Multiplicity="0..1" />
+          <End Role="Med_Details" Type="Self.Med_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Type">
+              <PropertyRef Name="MedTypeId" />
+            </Principal>
+            <Dependent Role="Med_Details">
+              <PropertyRef Name="Med_typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_Details">
+          <End Role="Med_Details" Type="Self.Med_Details" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Details">
+              <PropertyRef Name="Med_id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_ManualDay">
+          <End Role="Med_ManualDay" Type="Self.Med_ManualDay" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_ManualDay">
+              <PropertyRef Name="Med_Manual_day_Id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_manualDayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Prescription_Med_ManualTime">
+          <End Role="Med_ManualTime" Type="Self.Med_ManualTime" Multiplicity="0..1" />
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_ManualTime">
+              <PropertyRef Name="Med_manualTime_id" />
+            </Principal>
+            <Dependent Role="Med_Prescription">
+              <PropertyRef Name="Med_manualTimeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Pres_type_Pres_Med_Pres_Type">
+          <End Role="Med_Pres_Type" Type="Self.Med_Pres_Type" Multiplicity="1" />
+          <End Role="Med_Pres_type_Pres" Type="Self.Med_Pres_type_Pres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Pres_Type">
+              <PropertyRef Name="Pres_Type_ID" />
+            </Principal>
+            <Dependent Role="Med_Pres_type_Pres">
+              <PropertyRef Name="Pres_Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Pres_type_Pres_Med_Prescription">
+          <End Role="Med_Prescription" Type="Self.Med_Prescription" Multiplicity="1" />
+          <End Role="Med_Pres_type_Pres" Type="Self.Med_Pres_type_Pres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_Prescription">
+              <PropertyRef Name="Prescrip_id" />
+            </Principal>
+            <Dependent Role="Med_Pres_type_Pres">
+              <PropertyRef Name="Pre_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Med_Type_Med_quantity_type">
+          <End Role="Med_quantity_type" Type="Self.Med_quantity_type" Multiplicity="0..1" />
+          <End Role="Med_Type" Type="Self.Med_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Med_quantity_type">
+              <PropertyRef Name="Med_quan_typeId" />
+            </Principal>
+            <Dependent Role="Med_Type">
+              <PropertyRef Name="Med_quan_typeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Account_User_Group_Role">
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="0..1" />
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group_Role">
+              <PropertyRef Name="UserGrpRoleId" />
+            </Principal>
+            <Dependent Role="User_Account">
+              <PropertyRef Name="UserGrpRoleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Group_Role_User_Group1">
+          <End Role="User_Group" Type="Self.User_Group" Multiplicity="0..1" />
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Group">
+              <PropertyRef Name="UserGrpId" />
+            </Principal>
+            <Dependent Role="User_Group_Role">
+              <PropertyRef Name="UserGrpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Group_Role_User_Role1">
+          <End Role="User_Role" Type="Self.User_Role" Multiplicity="0..1" />
+          <End Role="User_Group_Role" Type="Self.User_Group_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Role">
+              <PropertyRef Name="UserRoelId" />
+            </Principal>
+            <Dependent Role="User_Group_Role">
+              <PropertyRef Name="UserRoelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="User_Account" Type="Self.User_Account" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="Emp_Designtion" EntityType="Self.Emp_Designtion" />
+          <EntitySet Name="Emp_Doc_Specialist" EntityType="Self.Emp_Doc_Specialist" />
+          <EntitySet Name="Emp_Employee" EntityType="Self.Emp_Employee" />
+          <EntitySet Name="Emp_Patient" EntityType="Self.Emp_Patient" />
+          <EntitySet Name="Med_Details" EntityType="Self.Med_Details" />
+          <EntitySet Name="Med_ManualDay" EntityType="Self.Med_ManualDay" />
+          <EntitySet Name="Med_ManualTime" EntityType="Self.Med_ManualTime" />
+          <EntitySet Name="Med_Pres_Type" EntityType="Self.Med_Pres_Type" />
+          <EntitySet Name="Med_Pres_type_Pres" EntityType="Self.Med_Pres_type_Pres" />
+          <EntitySet Name="Med_Prescription" EntityType="Self.Med_Prescription" />
+          <EntitySet Name="Med_quantity_type" EntityType="Self.Med_quantity_type" />
+          <EntitySet Name="Med_Type" EntityType="Self.Med_Type" />
+          <EntitySet Name="Shed_Appoinment" EntityType="Self.Shed_Appoinment" />
+          <EntitySet Name="Shed_Available_Staff" EntityType="Self.Shed_Available_Staff" />
+          <EntitySet Name="Shed_reshedule_Staff" EntityType="Self.Shed_reshedule_Staff" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="User_Account" EntityType="Self.User_Account" />
+          <EntitySet Name="User_Group" EntityType="Self.User_Group" />
+          <EntitySet Name="User_Group_Role" EntityType="Self.User_Group_Role" />
+          <EntitySet Name="User_Role" EntityType="Self.User_Role" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_User_Account_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_User_Account_Id">
+            <End Role="User_Account" EntitySet="User_Account" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_User_Account_Id" Association="Self.FK_dbo_AspNetUserLogins_dbo_User_Account_Id">
+            <End Role="User_Account" EntitySet="User_Account" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_Emp_Designtion" Association="Self.FK_Emp_Employee_Emp_Designtion">
+            <End Role="Emp_Designtion" EntitySet="Emp_Designtion" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_Emp_Doc_Specialist" Association="Self.FK_Emp_Employee_Emp_Doc_Specialist">
+            <End Role="Emp_Doc_Specialist" EntitySet="Emp_Doc_Specialist" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Employee_User_Group" Association="Self.FK_Emp_Employee_User_Group">
+            <End Role="User_Group" EntitySet="User_Group" />
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Patient_Emp_Employee" Association="Self.FK_Emp_Patient_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Emp_Patient" EntitySet="Emp_Patient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Appoinment_Emp_Employee" Association="Self.FK_Shed_Appoinment_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_Appoinment" EntitySet="Shed_Appoinment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Available_Staff_Emp_Employee" Association="Self.FK_Shed_Available_Staff_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_Available_Staff" EntitySet="Shed_Available_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_reshedule_Staff_Emp_Employee" Association="Self.FK_Shed_reshedule_Staff_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="Shed_reshedule_Staff" EntitySet="Shed_reshedule_Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Account_Emp_Employee" Association="Self.FK_User_Account_Emp_Employee">
+            <End Role="Emp_Employee" EntitySet="Emp_Employee" />
+            <End Role="User_Account" EntitySet="User_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shed_Appoinment_Emp_Patient" Association="Self.FK_Shed_Appoinment_Emp_Patient">
+            <End Role="Emp_Patient" EntitySet="Emp_Patient" />
+            <End Role="Shed_Appoinment" EntitySet="Shed_Appoinment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Details_Med_Type" Association="Self.FK_Med_Details_Med_Type">
+            <End Role="Med_Type" EntitySet="Med_Type" />
+            <End Role="Med_Details" EntitySet="Med_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_Details" Association="Self.FK_Med_Prescription_Med_Details">
+            <End Role="Med_Details" EntitySet="Med_Details" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_ManualDay" Association="Self.FK_Med_Prescription_Med_ManualDay">
+            <End Role="Med_ManualDay" EntitySet="Med_ManualDay" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Prescription_Med_ManualTime" Association="Self.FK_Med_Prescription_Med_ManualTime">
+            <End Role="Med_ManualTime" EntitySet="Med_ManualTime" />
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Pres_type_Pres_Med_Pres_Type" Association="Self.FK_Med_Pres_type_Pres_Med_Pres_Type">
+            <End Role="Med_Pres_Type" EntitySet="Med_Pres_Type" />
+            <End Role="Med_Pres_type_Pres" EntitySet="Med_Pres_type_Pres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Pres_type_Pres_Med_Prescription" Association="Self.FK_Med_Pres_type_Pres_Med_Prescription">
+            <End Role="Med_Prescription" EntitySet="Med_Prescription" />
+            <End Role="Med_Pres_type_Pres" EntitySet="Med_Pres_type_Pres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Med_Type_Med_quantity_type" Association="Self.FK_Med_Type_Med_quantity_type">
+            <End Role="Med_quantity_type" EntitySet="Med_quantity_type" />
+            <End Role="Med_Type" EntitySet="Med_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Account_User_Group_Role" Association="Self.FK_User_Account_User_Group_Role">
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+            <End Role="User_Account" EntitySet="User_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Group_Role_User_Group1" Association="Self.FK_User_Group_Role_User_Group1">
+            <End Role="User_Group" EntitySet="User_Group" />
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Group_Role_User_Role1" Association="Self.FK_User_Group_Role_User_Role1">
+            <End Role="User_Role" EntitySet="User_Role" />
+            <End Role="User_Group_Role" EntitySet="User_Group_Role" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="User_Account" EntitySet="User_Account" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HSPTALModelStoreContainer" CdmEntityContainer="HospitalEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="HSPTALModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="HSPTALModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="HSPTALModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="HSPTALModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Designtion">
+            <EntityTypeMapping TypeName="HSPTALModel.Emp_Designtion">
+              <MappingFragment StoreEntitySet="Emp_Designtion">
+                <ScalarProperty Name="EmpDesignationId" ColumnName="EmpDesignationId" />
+                <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Doc_Specialist">
+            <EntityTypeMapping TypeName="HSPTALModel.Emp_Doc_Specialist">
+              <MappingFragment StoreEntitySet="Emp_Doc_Specialist">
+                <ScalarProperty Name="Doc_specialist_id" ColumnName="Doc_specialist_id" />
+                <ScalarProperty Name="Doc_specialist" ColumnName="Doc_specialist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Employee">
+            <EntityTypeMapping TypeName="HSPTALModel.Emp_Employee">
+              <MappingFragment StoreEntitySet="Emp_Employee">
+                <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+                <ScalarProperty Name="Emp_name" ColumnName="Emp_name" />
+                <ScalarProperty Name="Emp_callingName" ColumnName="Emp_callingName" />
+                <ScalarProperty Name="Emp_tiltie" ColumnName="Emp_tiltie" />
+                <ScalarProperty Name="Emp_desig_id" ColumnName="Emp_desig_id" />
+                <ScalarProperty Name="Emp_isActive" ColumnName="Emp_isActive" />
+                <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+                <ScalarProperty Name="Doc_specialist_id" ColumnName="Doc_specialist_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emp_Patient">
+            <EntityTypeMapping TypeName="HSPTALModel.Emp_Patient">
+              <MappingFragment StoreEntitySet="Emp_Patient">
+                <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+                <ScalarProperty Name="Patient_address" ColumnName="Patient_address" />
+                <ScalarProperty Name="Patient_Pno" ColumnName="Patient_Pno" />
+                <ScalarProperty Name="App_Emp_Id" ColumnName="App_Emp_Id" />
+                <ScalarProperty Name="Disease_type" ColumnName="Disease_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Details">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_Details">
+              <MappingFragment StoreEntitySet="Med_Details">
+                <ScalarProperty Name="Med_id" ColumnName="Med_id" />
+                <ScalarProperty Name="Med_name" ColumnName="Med_name" />
+                <ScalarProperty Name="Med_typeId" ColumnName="Med_typeId" />
+                <ScalarProperty Name="Med_Available_quantity" ColumnName="Med_Available_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_ManualDay">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_ManualDay">
+              <MappingFragment StoreEntitySet="Med_ManualDay">
+                <ScalarProperty Name="Med_Manual_day_Id" ColumnName="Med_Manual_day_Id" />
+                <ScalarProperty Name="Med_Manual_day" ColumnName="Med_Manual_day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_ManualTime">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_ManualTime">
+              <MappingFragment StoreEntitySet="Med_ManualTime">
+                <ScalarProperty Name="Med_manualTime_id" ColumnName="Med_manualTime_id" />
+                <ScalarProperty Name="Med_manualTime1" ColumnName="Med_manualTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Pres_Type">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_Pres_Type">
+              <MappingFragment StoreEntitySet="Med_Pres_Type">
+                <ScalarProperty Name="Pres_Type_ID" ColumnName="Pres_Type_ID" />
+                <ScalarProperty Name="Pres_Type" ColumnName="Pres_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Pres_type_Pres">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_Pres_type_Pres">
+              <MappingFragment StoreEntitySet="Med_Pres_type_Pres">
+                <ScalarProperty Name="Pres_type_pres_Id" ColumnName="Pres_type_pres_Id" />
+                <ScalarProperty Name="Pre_id" ColumnName="Pre_id" />
+                <ScalarProperty Name="Pres_Type_id" ColumnName="Pres_Type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Prescription">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_Prescription">
+              <MappingFragment StoreEntitySet="Med_Prescription">
+                <ScalarProperty Name="Prescrip_id" ColumnName="Prescrip_id" />
+                <ScalarProperty Name="Med_id" ColumnName="Med_id" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Med_manualTimeId" ColumnName="Med_manualTimeId" />
+                <ScalarProperty Name="Med_manualDayId" ColumnName="Med_manualDayId" />
+                <ScalarProperty Name="Consulltdate" ColumnName="Consulltdate" />
+                <ScalarProperty Name="Isdeliver" ColumnName="Isdeliver" />
+                <ScalarProperty Name="DeliverDate" ColumnName="DeliverDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_quantity_type">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_quantity_type">
+              <MappingFragment StoreEntitySet="Med_quantity_type">
+                <ScalarProperty Name="Med_quan_typeId" ColumnName="Med_quan_typeId" />
+                <ScalarProperty Name="Med_quan_type" ColumnName="Med_quan_type" />
+                <ScalarProperty Name="Med_quantity" ColumnName="Med_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Med_Type">
+            <EntityTypeMapping TypeName="HSPTALModel.Med_Type">
+              <MappingFragment StoreEntitySet="Med_Type">
+                <ScalarProperty Name="MedTypeId" ColumnName="MedTypeId" />
+                <ScalarProperty Name="MedType" ColumnName="MedType" />
+                <ScalarProperty Name="Med_quan_typeId" ColumnName="Med_quan_typeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shed_Appoinment">
+            <EntityTypeMapping TypeName="HSPTALModel.Shed_Appoinment">
+              <MappingFragment StoreEntitySet="Shed_Appoinment">
+                <ScalarProperty Name="AppointmntId" ColumnName="AppointmntId" />
+                <ScalarProperty Name="Appoinmt_Date" ColumnName="Appoinmt_Date" />
+                <ScalarProperty Name="Appoinmt_Time" ColumnName="Appoinmt_Time" />
+                <ScalarProperty Name="App_Emp_Id" ColumnName="App_Emp_Id" />
+                <ScalarProperty Name="App_patient_Id" ColumnName="App_patient_Id" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shed_Available_Staff">
+            <EntityTypeMapping TypeName="HSPTALModel.Shed_Available_Staff">
+              <MappingFragment StoreEntitySet="Shed_Available_Staff">
+                <ScalarProperty Name="Emp_sheduleId" ColumnName="Emp_sheduleId" />
+                <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shed_reshedule_Staff">
+            <EntityTypeMapping TypeName="HSPTALModel.Shed_reshedule_Staff">
+              <MappingFragment StoreEntitySet="Shed_reshedule_Staff">
+                <ScalarProperty Name="Reshed_empId" ColumnName="Reshed_empId" />
+                <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HSPTALModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HSPTALModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Account">
+            <EntityTypeMapping TypeName="HSPTALModel.User_Account">
+              <MappingFragment StoreEntitySet="User_Account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserGrpRoleTypeId" ColumnName="UserGrpRoleTypeId" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Group">
+            <EntityTypeMapping TypeName="HSPTALModel.User_Group">
+              <MappingFragment StoreEntitySet="User_Group">
+                <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+                <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Group_Role">
+            <EntityTypeMapping TypeName="HSPTALModel.User_Group_Role">
+              <MappingFragment StoreEntitySet="User_Group_Role">
+                <ScalarProperty Name="UserGrpRoleId" ColumnName="UserGrpRoleId" />
+                <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+                <ScalarProperty Name="UserRoelId" ColumnName="UserRoelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Role">
+            <EntityTypeMapping TypeName="HSPTALModel.User_Role">
+              <MappingFragment StoreEntitySet="User_Role">
+                <ScalarProperty Name="UserRoelId" ColumnName="UserRoelId" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="HSPTALModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="User_Account">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

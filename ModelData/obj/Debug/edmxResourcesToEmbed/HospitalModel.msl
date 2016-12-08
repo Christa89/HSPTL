@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HSPTALModelStoreContainer" CdmEntityContainer="HospitalEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="HSPTALModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="HSPTALModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="HSPTALModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="HSPTALModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_Designtion">
+      <EntityTypeMapping TypeName="HSPTALModel.Emp_Designtion">
+        <MappingFragment StoreEntitySet="Emp_Designtion">
+          <ScalarProperty Name="EmpDesignationId" ColumnName="EmpDesignationId" />
+          <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_Doc_Specialist">
+      <EntityTypeMapping TypeName="HSPTALModel.Emp_Doc_Specialist">
+        <MappingFragment StoreEntitySet="Emp_Doc_Specialist">
+          <ScalarProperty Name="Doc_specialist_id" ColumnName="Doc_specialist_id" />
+          <ScalarProperty Name="Doc_specialist" ColumnName="Doc_specialist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_Employee">
+      <EntityTypeMapping TypeName="HSPTALModel.Emp_Employee">
+        <MappingFragment StoreEntitySet="Emp_Employee">
+          <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+          <ScalarProperty Name="Emp_name" ColumnName="Emp_name" />
+          <ScalarProperty Name="Emp_callingName" ColumnName="Emp_callingName" />
+          <ScalarProperty Name="Emp_tiltie" ColumnName="Emp_tiltie" />
+          <ScalarProperty Name="Emp_desig_id" ColumnName="Emp_desig_id" />
+          <ScalarProperty Name="Emp_isActive" ColumnName="Emp_isActive" />
+          <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+          <ScalarProperty Name="Doc_specialist_id" ColumnName="Doc_specialist_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_Patient">
+      <EntityTypeMapping TypeName="HSPTALModel.Emp_Patient">
+        <MappingFragment StoreEntitySet="Emp_Patient">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="Patient_address" ColumnName="Patient_address" />
+          <ScalarProperty Name="Patient_Pno" ColumnName="Patient_Pno" />
+          <ScalarProperty Name="App_Emp_Id" ColumnName="App_Emp_Id" />
+          <ScalarProperty Name="Disease_type" ColumnName="Disease_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Details">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_Details">
+        <MappingFragment StoreEntitySet="Med_Details">
+          <ScalarProperty Name="Med_id" ColumnName="Med_id" />
+          <ScalarProperty Name="Med_name" ColumnName="Med_name" />
+          <ScalarProperty Name="Med_typeId" ColumnName="Med_typeId" />
+          <ScalarProperty Name="Med_Available_quantity" ColumnName="Med_Available_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_ManualDay">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_ManualDay">
+        <MappingFragment StoreEntitySet="Med_ManualDay">
+          <ScalarProperty Name="Med_Manual_day_Id" ColumnName="Med_Manual_day_Id" />
+          <ScalarProperty Name="Med_Manual_day" ColumnName="Med_Manual_day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_ManualTime">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_ManualTime">
+        <MappingFragment StoreEntitySet="Med_ManualTime">
+          <ScalarProperty Name="Med_manualTime_id" ColumnName="Med_manualTime_id" />
+          <ScalarProperty Name="Med_manualTime1" ColumnName="Med_manualTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Pres_Type">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_Pres_Type">
+        <MappingFragment StoreEntitySet="Med_Pres_Type">
+          <ScalarProperty Name="Pres_Type_ID" ColumnName="Pres_Type_ID" />
+          <ScalarProperty Name="Pres_Type" ColumnName="Pres_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Pres_type_Pres">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_Pres_type_Pres">
+        <MappingFragment StoreEntitySet="Med_Pres_type_Pres">
+          <ScalarProperty Name="Pres_type_pres_Id" ColumnName="Pres_type_pres_Id" />
+          <ScalarProperty Name="Pre_id" ColumnName="Pre_id" />
+          <ScalarProperty Name="Pres_Type_id" ColumnName="Pres_Type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Prescription">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_Prescription">
+        <MappingFragment StoreEntitySet="Med_Prescription">
+          <ScalarProperty Name="Prescrip_id" ColumnName="Prescrip_id" />
+          <ScalarProperty Name="Med_id" ColumnName="Med_id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Med_manualTimeId" ColumnName="Med_manualTimeId" />
+          <ScalarProperty Name="Med_manualDayId" ColumnName="Med_manualDayId" />
+          <ScalarProperty Name="Consulltdate" ColumnName="Consulltdate" />
+          <ScalarProperty Name="Isdeliver" ColumnName="Isdeliver" />
+          <ScalarProperty Name="DeliverDate" ColumnName="DeliverDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_quantity_type">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_quantity_type">
+        <MappingFragment StoreEntitySet="Med_quantity_type">
+          <ScalarProperty Name="Med_quan_typeId" ColumnName="Med_quan_typeId" />
+          <ScalarProperty Name="Med_quan_type" ColumnName="Med_quan_type" />
+          <ScalarProperty Name="Med_quantity" ColumnName="Med_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Med_Type">
+      <EntityTypeMapping TypeName="HSPTALModel.Med_Type">
+        <MappingFragment StoreEntitySet="Med_Type">
+          <ScalarProperty Name="MedTypeId" ColumnName="MedTypeId" />
+          <ScalarProperty Name="MedType" ColumnName="MedType" />
+          <ScalarProperty Name="Med_quan_typeId" ColumnName="Med_quan_typeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shed_Appoinment">
+      <EntityTypeMapping TypeName="HSPTALModel.Shed_Appoinment">
+        <MappingFragment StoreEntitySet="Shed_Appoinment">
+          <ScalarProperty Name="AppointmntId" ColumnName="AppointmntId" />
+          <ScalarProperty Name="Appoinmt_Date" ColumnName="Appoinmt_Date" />
+          <ScalarProperty Name="Appoinmt_Time" ColumnName="Appoinmt_Time" />
+          <ScalarProperty Name="App_Emp_Id" ColumnName="App_Emp_Id" />
+          <ScalarProperty Name="App_patient_Id" ColumnName="App_patient_Id" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shed_Available_Staff">
+      <EntityTypeMapping TypeName="HSPTALModel.Shed_Available_Staff">
+        <MappingFragment StoreEntitySet="Shed_Available_Staff">
+          <ScalarProperty Name="Emp_sheduleId" ColumnName="Emp_sheduleId" />
+          <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shed_reshedule_Staff">
+      <EntityTypeMapping TypeName="HSPTALModel.Shed_reshedule_Staff">
+        <MappingFragment StoreEntitySet="Shed_reshedule_Staff">
+          <ScalarProperty Name="Reshed_empId" ColumnName="Reshed_empId" />
+          <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HSPTALModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HSPTALModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Account">
+      <EntityTypeMapping TypeName="HSPTALModel.User_Account">
+        <MappingFragment StoreEntitySet="User_Account">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UserGrpRoleTypeId" ColumnName="UserGrpRoleTypeId" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Group">
+      <EntityTypeMapping TypeName="HSPTALModel.User_Group">
+        <MappingFragment StoreEntitySet="User_Group">
+          <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+          <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Group_Role">
+      <EntityTypeMapping TypeName="HSPTALModel.User_Group_Role">
+        <MappingFragment StoreEntitySet="User_Group_Role">
+          <ScalarProperty Name="UserGrpRoleId" ColumnName="UserGrpRoleId" />
+          <ScalarProperty Name="UserGrpId" ColumnName="UserGrpId" />
+          <ScalarProperty Name="UserRoelId" ColumnName="UserRoelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Role">
+      <EntityTypeMapping TypeName="HSPTALModel.User_Role">
+        <MappingFragment StoreEntitySet="User_Role">
+          <ScalarProperty Name="UserRoelId" ColumnName="UserRoelId" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="HSPTALModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="User_Account">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

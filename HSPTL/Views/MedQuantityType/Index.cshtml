@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ModelData.Med_quantity_type>
+
+@{
+    ViewBag.Title = "Admin Tools";
+    ViewBag.SubTitle = "Medicine Quantity Type ";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <table class="table table-responsive table-hover table-bordered">
+        <tr>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Med_quan_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Med_quantity)
+            </th>
+            <th align="center" width="10%">
+                <i class="fa fa-edit"></i>  Edit
+            </th>
+            <th align="center" width="10%">
+                <i class="fa fa-undo"></i> Delete
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Med_quan_type)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Med_quantity)
+                </td>
+                <td align="center" >
+
+
+                     @Html.ActionLink("edit", "Edit", "MedQuantityType", new { id = item.Med_quan_typeId }, new
+                        {
+                            @* Needed to link to the html of the modal*@
+                            data_target = "#mymodel",
+                            @* Tells the bootstrap javascript to do its thing*@
+                            data_toggle = "modal",
+                           
+                        })
+                    <img src="~/images/edit.jpg" alt=" " width="30px" height=" 20px" />
+
+                </td>
+
+                <div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">
+                </div>
+                <td align="center">
+                    @Html.ActionLink("Del", "Edit", "MedQuantityType", new { id = item.Med_quan_typeId }, new
+                        {
+                            @* Needed to link to the html of the modal*@
+                            data_target = "#mymodel",
+                            @* Tells the bootstrap javascript to do its thing*@
+                            data_toggle = "modal",
+                           
+                        })
+                    <img src="~/images/delete.png" alt=" " width="30px" height=" 20px" />
+            </tr>
+        }
+    </table>
+
+</body>
+
+</html>
+
+
+<div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
