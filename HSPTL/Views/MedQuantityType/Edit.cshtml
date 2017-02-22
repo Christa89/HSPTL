@@ -71,12 +71,14 @@
         </div>
     </div>
 </div>
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-
+                
     $(document).ready(function () {
+
+
         $(function () {
-            debugger;
+            
             // when the modal is closed
             $('#mymodel').on('hidden.bs.modal', function () {
                 // remove the bs.modal data attribute from it
@@ -85,6 +87,11 @@
                 $('#mymodel .modal-content').empty();
             });
         });
+
+        $.ajaxPrefilter(function (options, original_Options, jqXHR) {
+            options.async = true;
+        });
+
     });
 
  
@@ -104,34 +111,34 @@
     
 
 
-    $(function(){
-        $("#idset").submit(function (e) {
+    //$(function(){
+    //    $("#idset").submit(function (e) {
            
-            //var txtId = $("#txtquantype").val();
-            //if (txtId == "") {
-            //    debugger;
-            //    $form.prepend($feedback);
-            //    e.preventDefault();
-            //}
-            debugger;
-            e.preventDefault();
+    //        //var txtId = $("#txtquantype").val();
+    //        //if (txtId == "") {
+    //        //    debugger;
+    //        //    $form.prepend($feedback);
+    //        //    e.preventDefault();
+    //        //}
+    //        debugger;
+    //        e.preventDefault();
 
-            $.ajax({
+    //        $.ajax({
 
 
-                url: this.action,
-                type: this.method,
-                data: $(this).serialize,
-                success: function (data) {
-                    $("#mymodel").html(data);
-                }
-                });
+    //            url: this.action,
+    //            type: this.method,
+    //            data: $(this).serialize,
+    //            success: function (data) {
+    //                $("#mymodel").html(data);
+    //            }
+    //            });
 
-            $form = $(this);
-            $.post(window.location.href, $(this).serialize, function (data) {
-                $feedback = $("<div>").html(data).find(".popupform");
-                $form.prepend($feedback);
-            })
+    //        $form = $(this);
+    //        $.post(window.location.href, $(this).serialize, function (data) {
+    //            $feedback = $("<div>").html(data).find(".popupform");
+    //            $form.prepend($feedback);
+    //        })
             
             //$form = $(this);
             //$.post(document.location.href,$(this).serialize, function(data){
@@ -139,8 +146,8 @@
             //    $feedback = $("<div>").html(data).find(".popupform");
             //    $form.prepend($feedback);
             //})
-        })
-    })
+    //    })
+    //})
 </script>
 
 

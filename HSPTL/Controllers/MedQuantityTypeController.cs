@@ -26,7 +26,7 @@ namespace HSPTL.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+               return new  HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Med_quantity_type med_quantity_type = db.Med_quantity_type.Find(id);
             if (med_quantity_type == null)

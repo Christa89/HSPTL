@@ -6,15 +6,6 @@
 
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-
     <table class="table table-responsive table-hover table-bordered">
         <tr>
             <th align="center">
@@ -56,8 +47,8 @@
 
                 </td>
 
-                <div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">
-                </div>
+                @*<div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">
+                </div>*@
                 <td align="center">
                     @Html.ActionLink("Del", "Edit", "MedQuantityType", new { id = item.Med_quan_typeId }, new
                         {
@@ -68,17 +59,14 @@
                            
                         })
                     <img src="~/images/delete.png" alt=" " width="30px" height=" 20px" />
+                    </td>
+            
             </tr>
         }
     </table>
 
-</body>
 
-</html>
-
-
-<div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">
-  
+<div id="mymodel" class="modal fade hidden-print" tabindex="-1" role="dialog">  
 </div>
 
 

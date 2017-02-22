@@ -55,3 +55,9 @@ D:\Learning\HSPTL\HSPTL\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Learning\HSPTL\HSPTL\obj\Debug\HSPTL.csprojResolveAssemblyReference.cache
 D:\Learning\HSPTL\HSPTL\obj\Debug\HSPTL.dll
 D:\Learning\HSPTL\HSPTL\obj\Debug\HSPTL.pdb
+D:\Learning\HSPTL\HSPTL\bin\System.Net.Http.Formatting.dll
+D:\Learning\HSPTL\HSPTL\bin\System.Web.Http.dll
+D:\Learning\HSPTL\HSPTL\bin\System.Web.Http.WebHost.dll
+D:\Learning\HSPTL\HSPTL\bin\System.Net.Http.Formatting.xml
+D:\Learning\HSPTL\HSPTL\bin\System.Web.Http.xml
+D:\Learning\HSPTL\HSPTL\bin\System.Web.Http.WebHost.xml
